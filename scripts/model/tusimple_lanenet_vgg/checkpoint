@@ -1,0 +1,2 @@
+model_checkpoint_path: "/home/zhy/Documents/Perception/Lanelinedetection/DNN/LaneNet/lanenet-lane-detection/model/tusimple_lanenet_vgg/tusimple_lanenet_vgg_2020-07-07-08-37-58.ckpt-106002"
+all_model_checkpoint_paths: "/home/zhy/Documents/Perception/Lanelinedetection/DNN/LaneNet/lanenet-lane-detection/model/tusimple_lanenet_vgg/tusimple_lanenet_vgg_2020-07-07-08-37-58.ckpt-106002"
