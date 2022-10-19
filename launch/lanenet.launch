@@ -1,0 +1,27 @@
+<launch>
+
+    <arg name="image_topic" default="/pylon_camera/image_raw"/>
+    <arg name="output_image" default="/lane_images"/>
+    <arg name="output_lane" default="/Lane"/>
+    <arg name="lane_curve_topic" default="/Lane_curve"/>
+    <arg name="lane_middle_topic" default="/Lane_middle"/>
+    <!-- <arg name="weight_path" default="$(find lane_detector)/model/tusimple_lanenet/tusimple_lanenet_vgg_2018-10-19-13-33-56.ckpt-200000"/> -->
+    <arg name="weight_path" default="$(find lanenet_detector)/scripts/model/tusimple_lanenet_vgg/tusimple_lanenet_vgg_2020-07-07-08-37-58.ckpt-106002"/>
+    <arg name="perspective_path" default="$(find lanenet_detector)/scripts/model/perspective/perspective_T5G.p"/>
+    <arg name="calibration_path" default="$(find lanenet_detector)/scripts/model/Calibration/ExteralCalibration1_T5G.p"/>
+    <!--<arg name="use_gpu" default="1"/>-->
+    <arg name="lane_image_topic" default="/lane_image"/>
+
+    <node pkg="lanenet_detector" type="lanenet_node.py" name="lanenet_node" output="screen">
+        <param name="image_topic" value="$(arg image_topic)" />
+        <param name="output_image" value="$(arg output_image)" />
+        <param name="output_lane" value="$(arg output_lane)" />
+        <param name="lane_curve_topic" value="$(arg lane_curve_topic)" />
+         <param name="lane_middle_topic" value="$(arg lane_middle_topic)" />
+        <param name="weight_path" value="$(arg weight_path)" />
+        <param name="perspective_path" value="$(arg perspective_path)" />
+        <param name="calibration_path" value="$(arg calibration_path)" />
+        <!--<param name="use_gpu" value="$(arg use_gpu)" />-->
+        <param name="lane_image_topic" value="$(arg lane_image_topic)" />
+    </node>
+</launch>
